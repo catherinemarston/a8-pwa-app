@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from 'src/app/services/home.service';
+import { Today } from './today.model';
 
 @Component({
   selector: 'app-today',
@@ -16,8 +17,9 @@ export class TodayComponent implements OnInit {
   }
 
   getPriceMulti() {
-    this.homeService.getPriceMulti().subscribe((data) => {
+    this.homeService.getPriceMulti().subscribe((data: Today) => {
       this.priceMulti = data;
+      console.log(data);
     },
     (error) => {
       console.log(error);

@@ -14,7 +14,7 @@ export class HistoryComponent implements OnInit {
 
   ngOnInit() {
     this.getTodayPrice();
-    // this.getYesterdayPrice();
+    this.getYesterdayPrice();
     // this.getTwoDaysPrice();
     // this.getThreeDaysPrice();
     // this.getFourDaysPrice();
@@ -35,7 +35,8 @@ export class HistoryComponent implements OnInit {
         eth: eth && eth.ETH.USD,
         btc: btc && btc.BTC.USD,
         ltc: ltc && ltc.LTC.USD
-      })
+      });
+      console.log(this.pricesHistory);
     });
   }
 
